@@ -95,29 +95,29 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold mb-6 text-foreground">Connect With Me</h3>
               <div className="space-y-4">
                 <a
-                  href="mailto:john.developer@example.com"
+                  href="mailto:Developer@actionawareness.se"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="w-5 h-5" />
-                  <span>john.developer@example.com</span>
+                  <span>Developer@actionawareness.se</span>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/mattiasarwidson"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
-                  <span>LinkedIn Profile</span>
+                  <span>LinkedIn - Mattias Arwidson</span>
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/MattiasArwidson"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Github className="w-5 h-5" />
-                  <span>GitHub Profile</span>
+                  <span>GitHub - MattiasArwidson</span>
                 </a>
               </div>
             </div>

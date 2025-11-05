@@ -1,7 +1,8 @@
 const About = () => {
   const skills = [
-    "Kotlin", "Jetpack Compose", "Firebase", "React", "TypeScript",
-    "Node.js", "PostgreSQL", "REST APIs", "Git", "Agile"
+    "Kotlin", "Jetpack Compose", "Swift", "SwiftUI", "React Native",
+    "Firebase", "GitHub", "C++", "HTML", "Figma",
+    "UI/UX Design", "Trello", "Notion", "AI Integration"
   ];
 
   return (
@@ -11,15 +12,21 @@ const About = () => {
         
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
           <p>
-            I'm a developer passionate about creating clean, functional applications that solve real problems.
-            My journey started with simple learning projects and has evolved to building complex systems like
-            NexuHub Campus, a comprehensive social platform for educational institutions.
+            I'm a UI/UX designer and programmer who combines technical skills with a decade of pedagogical experience. 
+            After years of teaching extreme sports and designing learning experiences, I've returned to my passion for 
+            programming with fresh perspective on how users think and learn.
           </p>
           
           <p>
-            I specialize in mobile and web development, with a focus on intuitive user experiences and
-            robust backend architecture. Every project I build teaches me something new about crafting
-            better software.
+            Currently studying iPhone and Android development at Malmö YH, I specialize in creating intuitive, 
+            user-centered applications. My background in communication and teaching gives me a unique advantage in 
+            UX design—I understand how to guide users naturally through complex interfaces. During my internship, 
+            I led project management and productivity while being responsible for UX, safety, and navigation.
+          </p>
+
+          <p>
+            I'm curious, self-motivated, and eager to learn every aspect of the development process. My goal is simple: 
+            build applications that feel effortless to use.
           </p>
         </div>
 

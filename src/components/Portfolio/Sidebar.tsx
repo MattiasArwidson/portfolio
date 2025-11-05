@@ -58,7 +58,7 @@ const Sidebar = () => {
       <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-64 flex-col justify-between p-8 border-r border-border bg-sidebar z-40">
         <div className="space-y-6">
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-sidebar-foreground">JD</h2>
+            <h2 className="text-2xl font-bold text-sidebar-foreground">MA</h2>
           </div>
 
           <nav className="space-y-2">
@@ -84,18 +84,20 @@ const Sidebar = () => {
 
         <div className="flex gap-4">
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/mattiasarwidson"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+            aria-label="LinkedIn Profile"
           >
             <Linkedin className="w-5 h-5" />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/MattiasArwidson"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+            aria-label="GitHub Profile"
           >
             <Github className="w-5 h-5" />
           </a>
@@ -131,18 +133,20 @@ const Sidebar = () => {
 
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/mattiasarwidson"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/MattiasArwidson"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="GitHub Profile"
               >
                 <Github className="w-5 h-5" />
               </a>
