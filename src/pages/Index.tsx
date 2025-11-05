@@ -1,12 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Sidebar from "@/components/Portfolio/Sidebar";
+import Hero from "@/components/Portfolio/Hero";
+import About from "@/components/Portfolio/About";
+import Projects from "@/components/Portfolio/Projects";
+import Contact from "@/components/Portfolio/Contact";
+import CursorGlow from "@/components/Portfolio/CursorGlow";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="relative min-h-screen">
+      <CursorGlow />
+      <Sidebar />
+      
+      <main className="lg:ml-64">
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+      </main>
     </div>
   );
 };
