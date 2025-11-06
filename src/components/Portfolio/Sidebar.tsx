@@ -84,7 +84,7 @@ const Sidebar = () => {
 
         <div className="flex gap-4">
           <a
-            href="https://www.linkedin.com/in/mattiasarwidson"
+            href="https://www.linkedin.com/in/mattiasrarwidson"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -133,7 +133,7 @@ const Sidebar = () => {
 
             <div className="flex gap-4">
               <a
-                href="https://www.linkedin.com/in/mattiasarwidson"
+                href="https://www.linkedin.com/in/mattiasrarwidson"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"

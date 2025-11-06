@@ -102,7 +102,7 @@ const Contact = () => {
                   <span>Developer@actionawareness.se</span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/mattiasarwidson"
+                  href="https://www.linkedin.com/in/mattiasrarwidson"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"

@@ -21,7 +21,7 @@ const About = () => {
             Currently studying iPhone and Android development at Malmö YH, I specialize in creating intuitive, 
             user-centered applications. My background in communication and teaching gives me a unique advantage in 
             UX design—I understand how to guide users naturally through complex interfaces. During my internship, 
-            I led project management and productivity while being responsible for UX, safety, and navigation.
+            I led project management and productivity while being responsible for UX, navigation, database and code structure.
           </p>
 
           <p>
