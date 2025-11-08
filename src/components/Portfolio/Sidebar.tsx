@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Home, User, Briefcase, Mail, Menu, X, Linkedin, Github } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import logo from "@/assets/logo_action_awareness.png";
 
 const Sidebar = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -58,7 +59,11 @@ const Sidebar = () => {
       <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-64 flex-col justify-between p-8 border-r border-border bg-sidebar z-40">
         <div className="space-y-6">
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-sidebar-foreground">MA</h2>
+            <img 
+              src={logo} 
+              alt="Action Awareness Logo" 
+              className="w-full dark:invert transition-all"
+            />
           </div>
 
           <nav className="space-y-2">
@@ -110,6 +115,13 @@ const Sidebar = () => {
           <div className="absolute inset-0 bg-background/95 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
           <aside className="absolute left-0 top-0 h-screen w-64 flex flex-col justify-between p-8 bg-sidebar border-r border-border">
             <div className="space-y-6 mt-16">
+              <div className="mb-12">
+                <img 
+                  src={logo} 
+                  alt="Action Awareness Logo" 
+                  className="w-full dark:invert transition-all"
+                />
+              </div>
               <nav className="space-y-2">
                 {navItems.map((item) => {
                   const Icon = item.icon;
