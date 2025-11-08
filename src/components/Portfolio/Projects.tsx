@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard";
+import basecampLogo from "@/assets/basecamp_logo.png";
 
 const Projects = () => {
   const projects = [
@@ -17,11 +18,23 @@ const Projects = () => {
       detailedDescription: "Explored React fundamentals by building a todo list app. Implemented CRUD operations and learned about component lifecycle and state management.",
     },
     {
-      title: "Early Learning App 3",
-      description: "Weather app using public APIs",
-      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
-      techStack: ["React", "REST API", "Tailwind CSS"],
-      detailedDescription: "First project working with external APIs. Fetches weather data and displays forecasts. Learned about async operations, error handling, and responsive design.",
+      title: "Basecamp",
+      description: "Multi-User Room Reservation & Session Management System",
+      images: [basecampLogo, basecampLogo, basecampLogo, basecampLogo],
+      techStack: ["Kotlin", "Firebase", "Android", "Room Database", "MVVM", "Material Design"],
+      detailedDescription: `Basecamp was the next step after Swippers, moving from single-user logic to multi-user and enterprise-level architecture. It's an Android application that handles company-wide room reservations, session management, and multiple categories using Kotlin, Firebase, and Room Database.
+
+The project was developed in a team, where I handled data flow, authentication, and Room–Firestore integration. Our reference client was XIOR, and the app scaled into a global booking system adaptable for any company.
+
+Key Learnings:
+• Room & Firestore Integration: Combined offline and online data persistence for a seamless experience
+• Authentication Handling: Implemented user sessions, profiles, and security with Firebase Auth
+• Team Collaboration: Built features collaboratively using shared Git workflows and modularized Kotlin code
+• Enterprise Logic: Structured apps for larger organizations with categories, roles, and data flows
+• Scalable Design: Focused on patterns allowing any company to adapt the platform easily
+
+Foundation for Future Projects:
+The architectural and database patterns used here evolved directly into NexuHub Campus. This is where I established MVVM structure, modularized logic, and professional collaboration patterns that now define my development standards.`,
     },
     {
       title: "Intermediate App",
