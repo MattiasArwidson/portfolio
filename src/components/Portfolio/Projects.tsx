@@ -22,9 +22,9 @@ const Projects = () => {
       description: "Multi-User Room Reservation & Session Management System",
       images: [basecampLogo, basecampLogo, basecampLogo, basecampLogo],
       techStack: ["Kotlin", "Firebase", "Android", "Room Database", "MVVM", "Material Design"],
-      detailedDescription: `Basecamp was the next step after Swippers, moving from single-user logic to multi-user and enterprise-level architecture. It's an Android application that handles company-wide room reservations, session management, and multiple categories using Kotlin, Firebase, and Room Database.
+      detailedDescription: `This project was created by a team of 5 developers. It's an Android application that handles company-wide room reservations, session management, and multiple categories using Kotlin, Firebase, and Room Database.
 
-The project was developed in a team, where I handled data flow, authentication, and Room–Firestore integration. Our reference client was XIOR, and the app scaled into a global booking system adaptable for any company.
+I handled data flow, authentication, and Room–Firestore integration. Our reference client was XIOR, and the app scaled into a global booking system adaptable for any company.
 
 Key Learnings:
 • Room & Firestore Integration: Combined offline and online data persistence for a seamless experience
@@ -56,7 +56,7 @@ The architectural and database patterns used here evolved directly into NexuHub 
     },
     {
       title: "NexuHub Campus",
-      description: "Advanced social media platform for students and educational institutions",
+      description: "Educational Platform & Multi-Role Data Management System",
       images: [
         "/placeholder.svg",
         "/placeholder.svg",
@@ -72,35 +72,43 @@ The architectural and database patterns used here evolved directly into NexuHub 
       techStack: [
         "Kotlin",
         "Jetpack Compose",
-        "Firebase",
-        "Cloud Firestore",
+        "Firebase Firestore",
         "Firebase Auth",
-        "Material Design 3",
-        "Coroutines",
-        "Flow",
+        "Firebase Storage",
+        "MVVM Architecture",
+        "Material Design",
       ],
       isFeatured: true,
-      detailedDescription: `NexuHub Campus is a comprehensive social networking platform designed specifically for educational institutions. 
+      detailedDescription: `NexuHub Campus is a digital education platform designed to unify learning material, schedules, profiles, and user-generated content—such as news, wiki posts, and communication—into one cohesive system.
+
+Developed in Kotlin with Jetpack Compose as the frontend framework and Firebase as the backend, the platform supports multiple user roles, real-time updates, and secure access through Firestore, Firebase Auth, and Firebase Storage.
+
+The app is built to serve as an adaptable foundation for schools, universities, and training organizations. It provides a structured environment where students and teachers can interact dynamically, share knowledge, and stay synchronized through real-time data and modular design.
 
 Key Features:
-• Real-time messaging and group chats for students and staff
-• Event management system with calendar integration
-• Academic resource sharing and collaboration tools
-• News feed with department-specific content filtering
-• Role-based access control (Students, Teachers, Administrators)
-• Push notifications for important updates
-• Offline-first architecture with sync capabilities
+• Multi-Role System: Dynamic UI rendering based on user role (Guest, Student, Class Rep, Teacher, Admin, Super Admin)
+• Secure Authentication: Email verification and role-based permission control via Firestore Security Rules
+• Real-Time Communication: Integrated chat and collaboration powered by Firestore's live listeners
+• Modular Database Design: Scalable data structure for multi-school and multi-class environments with isolated "biomes"
+• Media Management: Dedicated storage handled via Firebase Storage for efficiency and security
 
-Technical Highlights:
-• Clean architecture with MVVM pattern
-• Dependency injection using Hilt
-• Custom UI components following Material Design 3 guidelines
-• Efficient image loading and caching
-• Real-time updates using Firebase listeners
-• Comprehensive error handling and user feedback
-• Security rules for data protection
+Core Systems:
+• News Feed: Combined internal school updates with external tech/education insights using asynchronous Firestore listeners
+• Wiki Feed: Collaborative knowledge base with tag-based categorization, version control, and real-time synchronization
+• Navigation System: Rebuilt using Jetpack Compose Navigation 3 for state-driven navigation and improved UX
 
-This project represents my most complex work to date, handling real-time data, complex user interactions, and scalable architecture patterns.`,
+Security Architecture:
+Each school and class context is isolated to prevent unauthorized access. Role-based visibility, context-aware profiles tied to SchoolID and ClassID, and UI that dynamically adapts to user privileges ensure data privacy in educational environments.
+
+Key Learnings:
+• Advanced Architecture: Designed modular MVVM structure supporting scalability and clean data separation
+• Security by Design: Implemented context-based access with strict Firestore rules and adaptive UI control
+• Real-Time Synchronization: Efficient use of asynchronous Firestore listeners for continuous updates
+• State-Driven Navigation: Adopted Compose Navigation 3 for improved UX and flow management
+• Collaborative Development: Built complex systems within a coordinated team
+
+Foundation for Future Development:
+NexuHub Campus represents a milestone project where enterprise-grade concepts met educational application design. Many of the architectural patterns and data-handling principles refined here evolved from Basecamp and have since become my standard for modern Android development.`,
       links: {
         github: "#",
         demo: "#",
