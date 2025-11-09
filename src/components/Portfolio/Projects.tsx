@@ -1,21 +1,23 @@
 import ProjectCard from "./ProjectCard";
 import basecampLogo from "@/assets/basecamp_logo.png";
+import wakeTricksIcon from "@/assets/wake_tricks_icon.png";
+import placeholderIcon from "@/assets/placeholder_app_icon.png";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Early Learning App 1",
-      description: "My first programming project - a simple calculator application",
-      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
-      techStack: ["HTML", "CSS", "JavaScript"],
-      detailedDescription: "This was my introduction to programming. Built a basic calculator that performs arithmetic operations. Learned fundamental concepts like variables, functions, and DOM manipulation.",
+      title: "Wake Tricks",
+      description: "Cable park wakeboard tricks lexicon app for iOS",
+      images: [wakeTricksIcon, wakeTricksIcon, wakeTricksIcon],
+      techStack: ["Swift", "SwiftUI", "iOS", "Core Data"],
+      detailedDescription: "Your cable park wakeboard tricks lexicon app. Complete lexicon of all Cablepark Wakeboard tricks. Add tricks to track progress and create wish lists for training goals.",
     },
     {
-      title: "Early Learning App 2",
-      description: "Interactive todo list with local storage",
-      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
-      techStack: ["React", "TypeScript", "Local Storage"],
-      detailedDescription: "Explored React fundamentals by building a todo list app. Implemented CRUD operations and learned about component lifecycle and state management.",
+      title: "Learning Project",
+      description: "Early development project",
+      images: [placeholderIcon, placeholderIcon, placeholderIcon],
+      techStack: ["React", "TypeScript"],
+      detailedDescription: "Early learning project exploring fundamental programming concepts and application development.",
     },
     {
       title: "Basecamp",
