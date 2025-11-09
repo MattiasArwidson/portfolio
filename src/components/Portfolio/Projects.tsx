@@ -1,6 +1,13 @@
 import ProjectCard from "./ProjectCard";
 import basecampLogo from "@/assets/basecamp_logo.png";
 import wakeTricksIcon from "@/assets/wake_tricks_icon.png";
+import wakeTricksScreen1 from "@/assets/wake_tricks_screenshot_1.png";
+import wakeTricksScreen2 from "@/assets/wake_tricks_screenshot_2.png";
+import wakeTricksScreen3 from "@/assets/wake_tricks_screenshot_3.png";
+import wakeTricksScreen4 from "@/assets/wake_tricks_screenshot_4.png";
+import wakeTricksScreen5 from "@/assets/wake_tricks_screenshot_5.png";
+import wakeTricksScreen6 from "@/assets/wake_tricks_screenshot_6.png";
+import wakeTricksScreen7 from "@/assets/wake_tricks_screenshot_7.png";
 import placeholderIcon from "@/assets/placeholder_app_icon.png";
 
 const Projects = () => {
@@ -8,7 +15,16 @@ const Projects = () => {
     {
       title: "Wake Tricks",
       description: "Cable park wakeboard tricks lexicon app for iOS",
-      images: [wakeTricksIcon, wakeTricksIcon, wakeTricksIcon],
+      images: [
+        wakeTricksIcon,
+        wakeTricksScreen1,
+        wakeTricksScreen2,
+        wakeTricksScreen3,
+        wakeTricksScreen4,
+        wakeTricksScreen5,
+        wakeTricksScreen6,
+        wakeTricksScreen7,
+      ],
       techStack: ["Swift", "SwiftUI", "iOS", "Core Data"],
       detailedDescription: "Your cable park wakeboard tricks lexicon app. Complete lexicon of all Cablepark Wakeboard tricks. Add tricks to track progress and create wish lists for training goals.",
     },
