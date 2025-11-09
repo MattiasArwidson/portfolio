@@ -33,11 +33,11 @@ const ProjectCard = ({
         }`}
         onClick={() => setIsExpanded(true)}
       >
-        <div className="aspect-video w-full overflow-hidden rounded-lg mb-4 bg-muted">
+        <div className="aspect-video w-full overflow-hidden rounded-lg mb-4 bg-muted group">
           <img
             src={images[0] || "/placeholder.svg"}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
           />
         </div>
 
@@ -82,11 +82,11 @@ const ProjectCard = ({
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {images.map((image, idx) => (
-                <div key={idx} className="aspect-video w-full overflow-hidden rounded-lg bg-muted">
+                <div key={idx} className="aspect-video w-full overflow-hidden rounded-lg bg-muted group cursor-pointer">
                   <img
                     src={image || "/placeholder.svg"}
                     alt={`${title} screenshot ${idx + 1}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-125"
                   />
                 </div>
               ))}
