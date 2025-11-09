@@ -83,7 +83,7 @@ const ProjectCard = ({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {images.map((image, idx) => (
                 <div key={idx} className="relative aspect-video w-full rounded-lg bg-muted group cursor-pointer">
-                  <div className="absolute inset-0 overflow-hidden rounded-lg transition-all duration-300 group-hover:z-50 group-hover:scale-150 group-hover:shadow-2xl group-hover:rounded-none">
+                  <div className="absolute inset-0 overflow-hidden rounded-lg transition-all duration-300 group-hover:z-50 group-hover:scale-150 group-hover:rounded-none">
                     <img
                       src={image || "/placeholder.svg"}
                       alt={`${title} screenshot ${idx + 1}`}
