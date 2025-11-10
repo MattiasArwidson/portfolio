@@ -30,6 +30,86 @@ import nexuhubFigma3 from "@/assets/nexuhub_development_screenshot_figma_schooli
 const Projects = () => {
   const projects = [
     {
+      title: "NexuHub Campus",
+      description: "Educational Platform & Multi-Role Data Management System",
+      images: [
+  nexuhubLogo,
+  nexuhubScreen1,
+  nexuhubScreen2,
+  nexuhubScreen3,
+  nexuhubScreen4,
+  nexuhubScreen5,
+  nexuhubScreen6,
+  nexuhubScreen7,
+  nexuhubScreen8,
+  nexuhubScreen9,
+  nexuhubScreen10,
+  nexuhubScreen11,
+  nexuhubFigma1,
+  nexuhubFigma2,
+  nexuhubFigma3,
+],
+      techStack: [
+        "Kotlin",
+        "Jetpack Compose",
+        "Firebase Firestore",
+        "Firebase Auth",
+        "Firebase Storage",
+        "MVVM Architecture",
+        "Material Design",
+      ],
+      isFeatured: true,
+      detailedDescription: `NexuHub Campus is a digital education platform designed to unify learning material, schedules, profiles, and user-generated content—such as news, wiki posts, and communication—into one cohesive system.
+
+Developed in Kotlin with Jetpack Compose as the frontend framework and Firebase as the backend, the platform supports multiple user roles, real-time updates, and secure access through Firestore, Firebase Auth, and Firebase Storage.
+
+The app is built to serve as an adaptable foundation for schools, universities, and training organizations. It provides a structured environment where students and teachers can interact dynamically, share knowledge, and stay synchronized through real-time data and modular design.
+
+## Key Features
+
+**Multi-Role System**: Dynamic UI rendering based on user role (Guest, Student, Class Rep, Teacher, Admin, Super Admin).
+
+**Secure Authentication**: Email verification and role-based permission control via Firestore Security Rules.
+
+**Real-Time Communication**: Integrated chat and collaboration powered by Firestore's live listeners.
+
+**Modular Database Design**: Scalable data structure for multi-school and multi-class environments with isolated "biomes".
+
+**Media Management**: Dedicated storage handled via Firebase Storage for efficiency and security.
+
+## Core Systems
+
+**News Feed**: Combined internal school updates with external tech/education insights using asynchronous Firestore listeners.
+
+**Wiki Feed**: Collaborative knowledge base with tag-based categorization, version control, and real-time synchronization.
+
+**Navigation System**: Rebuilt using Jetpack Compose Navigation 3 for state-driven navigation and improved UX.
+
+## Security Architecture
+
+Each school and class context is isolated to prevent unauthorized access. Role-based visibility, context-aware profiles tied to SchoolID and ClassID, and UI that dynamically adapts to user privileges ensure data privacy in educational environments.
+
+## Key Learnings
+
+**Advanced Architecture**: Designed modular MVVM structure supporting scalability and clean data separation.
+
+**Security by Design**: Implemented context-based access with strict Firestore rules and adaptive UI control.
+
+**Real-Time Synchronization**: Efficient use of asynchronous Firestore listeners for continuous updates.
+
+**State-Driven Navigation**: Adopted Compose Navigation 3 for improved UX and flow management.
+
+**Collaborative Development**: Built complex systems within a coordinated team.
+
+## Foundation for Future Development
+
+NexuHub Campus represents a milestone project where enterprise-grade concepts met educational application design. Many of the architectural patterns and data-handling principles refined here evolved from Basecamp and have since become my standard for modern Android development.`,
+      links: {
+        github: "#",
+        demo: "#",
+      },
+    },
+    {
       title: "Wake Tricks",
       description: "Cable park wakeboard tricks lexicon app for iOS",
       images: [
@@ -133,86 +213,6 @@ The messaging system demonstrates role-based UI composition, where the same navi
 ## Foundation for Future Development
 
 BaseCamp represents practical experience in collaborative Android development where architectural decisions directly impacted team productivity. The navigation patterns, state management systems, and role-based UI composition established here demonstrate scalable approaches to building multi-user applications with complex permission models. The emphasis on team-oriented code organization and version control management reflects the realities of collaborative software development.`,
-    },
-    {
-      title: "NexuHub Campus",
-      description: "Educational Platform & Multi-Role Data Management System",
-      images: [
-  nexuhubLogo,
-  nexuhubScreen1,
-  nexuhubScreen2,
-  nexuhubScreen3,
-  nexuhubScreen4,
-  nexuhubScreen5,
-  nexuhubScreen6,
-  nexuhubScreen7,
-  nexuhubScreen8,
-  nexuhubScreen9,
-  nexuhubScreen10,
-  nexuhubScreen11,
-  nexuhubFigma1,
-  nexuhubFigma2,
-  nexuhubFigma3,
-],
-      techStack: [
-        "Kotlin",
-        "Jetpack Compose",
-        "Firebase Firestore",
-        "Firebase Auth",
-        "Firebase Storage",
-        "MVVM Architecture",
-        "Material Design",
-      ],
-      isFeatured: true,
-      detailedDescription: `NexuHub Campus is a digital education platform designed to unify learning material, schedules, profiles, and user-generated content—such as news, wiki posts, and communication—into one cohesive system.
-
-Developed in Kotlin with Jetpack Compose as the frontend framework and Firebase as the backend, the platform supports multiple user roles, real-time updates, and secure access through Firestore, Firebase Auth, and Firebase Storage.
-
-The app is built to serve as an adaptable foundation for schools, universities, and training organizations. It provides a structured environment where students and teachers can interact dynamically, share knowledge, and stay synchronized through real-time data and modular design.
-
-## Key Features
-
-**Multi-Role System**: Dynamic UI rendering based on user role (Guest, Student, Class Rep, Teacher, Admin, Super Admin).
-
-**Secure Authentication**: Email verification and role-based permission control via Firestore Security Rules.
-
-**Real-Time Communication**: Integrated chat and collaboration powered by Firestore's live listeners.
-
-**Modular Database Design**: Scalable data structure for multi-school and multi-class environments with isolated "biomes".
-
-**Media Management**: Dedicated storage handled via Firebase Storage for efficiency and security.
-
-## Core Systems
-
-**News Feed**: Combined internal school updates with external tech/education insights using asynchronous Firestore listeners.
-
-**Wiki Feed**: Collaborative knowledge base with tag-based categorization, version control, and real-time synchronization.
-
-**Navigation System**: Rebuilt using Jetpack Compose Navigation 3 for state-driven navigation and improved UX.
-
-## Security Architecture
-
-Each school and class context is isolated to prevent unauthorized access. Role-based visibility, context-aware profiles tied to SchoolID and ClassID, and UI that dynamically adapts to user privileges ensure data privacy in educational environments.
-
-## Key Learnings
-
-**Advanced Architecture**: Designed modular MVVM structure supporting scalability and clean data separation.
-
-**Security by Design**: Implemented context-based access with strict Firestore rules and adaptive UI control.
-
-**Real-Time Synchronization**: Efficient use of asynchronous Firestore listeners for continuous updates.
-
-**State-Driven Navigation**: Adopted Compose Navigation 3 for improved UX and flow management.
-
-**Collaborative Development**: Built complex systems within a coordinated team.
-
-## Foundation for Future Development
-
-NexuHub Campus represents a milestone project where enterprise-grade concepts met educational application design. Many of the architectural patterns and data-handling principles refined here evolved from Basecamp and have since become my standard for modern Android development.`,
-      links: {
-        github: "#",
-        demo: "#",
-      },
     },
   ];
 

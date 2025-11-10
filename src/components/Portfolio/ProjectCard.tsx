@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { X, ExternalLink, Github } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { X, ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import MarkdownContent from "./MarkdownContent";
 
 interface ProjectCardProps {
@@ -25,9 +25,33 @@ const ProjectCard = ({
   links,
 }: ProjectCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // --- Navigation logic ---
+  const handlePrev = useCallback(
+    () => setCurrentImage((prev) => Math.max(prev - 1, 0)),
+    []
+  );
+  const handleNext = useCallback(
+    () => setCurrentImage((prev) => Math.min(prev + 1, images.length - 1)),
+    [images.length]
+  );
+
+  // --- Keyboard navigation ---
+  useEffect(() => {
+    if (!isExpanded) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") handlePrev();
+      if (e.key === "ArrowRight") handleNext();
+      if (e.key === "Escape") setIsExpanded(false);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [isExpanded, handlePrev, handleNext]);
 
   return (
     <>
+      {/* --- Collapsed Card --- */}
       <div
         className={`project-card-hover cursor-pointer rounded-xl border border-border bg-card p-6 ${
           isFeatured ? "md:col-span-2 lg:col-span-3 ring-2 ring-primary/30" : ""
@@ -62,9 +86,11 @@ const ProjectCard = ({
         </div>
       </div>
 
+      {/* --- Expanded Modal --- */}
       {isExpanded && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm p-6 overflow-y-auto">
           <div className="relative bg-card border border-border rounded-xl max-w-5xl w-full max-h-[90vh] overflow-y-auto p-8">
+            {/* Close button */}
             <button
               onClick={() => setIsExpanded(false)}
               className="sticky top-0 float-right p-2 rounded-lg bg-secondary hover:bg-muted transition-colors z-10 mb-4"
@@ -72,6 +98,63 @@ const ProjectCard = ({
               <X className="w-6 h-6" />
             </button>
 
+            {/* --- Image Carousel --- */}
+{images.length > 0 && (
+  <div className="relative mb-8">
+    {/* Static display window */}
+    <div className="relative flex justify-center items-center bg-muted rounded-lg overflow-hidden" style={{ height: "65vh" }}>
+      {images[currentImage] && (
+        <img
+          src={images[currentImage]}
+          alt={`${title} screenshot ${currentImage + 1}`}
+          className="max-h-full max-w-full object-contain transition-all duration-300"
+        />
+      )}
+
+      {/* Left arrow */}
+      {currentImage > 0 && (
+        <button
+          onClick={handlePrev}
+          className="absolute left-3 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/95 rounded-full p-2 shadow-md transition"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+      )}
+
+      {/* Right arrow */}
+      {currentImage < images.length - 1 && (
+        <button
+          onClick={handleNext}
+          className="absolute right-3 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/95 rounded-full p-2 shadow-md transition"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      )}
+    </div>
+
+    {/* Thumbnails below */}
+    {images.length > 1 && (
+      <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+        {images.map((thumb, idx) => (
+          <img
+            key={idx}
+            src={thumb || "/placeholder.svg"}
+            alt={`Preview ${idx + 1}`}
+            onClick={() => setCurrentImage(idx)}
+            className={`h-16 w-auto rounded-md cursor-pointer transition-all duration-300 ${
+              currentImage === idx
+                ? "ring-2 ring-primary"
+                : "opacity-70 hover:opacity-100"
+            }`}
+          />
+        ))}
+      </div>
+    )}
+  </div>
+)}
+
+
+            {/* --- Text Content Below Image --- */}
             <h2 className="text-4xl font-bold mb-4 text-card-foreground">{title}</h2>
             <p className="text-xl text-muted-foreground mb-6">{description}</p>
 
@@ -80,20 +163,6 @@ const ProjectCard = ({
                 <MarkdownContent content={detailedDescription} />
               </div>
             )}
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              {images.map((image, idx) => (
-                <div key={idx} className="relative aspect-video w-full rounded-lg bg-muted group cursor-pointer">
-                  <div className="absolute inset-0 overflow-hidden rounded-lg transition-all duration-300 group-hover:z-50 group-hover:scale-150 group-hover:rounded-none">
-                    <img
-                      src={image || "/placeholder.svg"}
-                      alt={`${title} screenshot ${idx + 1}`}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
 
             <div className="mb-6">
               <h3 className="text-xl font-semibold mb-3 text-card-foreground">Tech Stack</h3>
