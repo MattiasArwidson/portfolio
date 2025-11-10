@@ -26,7 +26,36 @@ const Projects = () => {
         wakeTricksScreen7,
       ],
       techStack: ["Swift", "SwiftUI", "iOS", "Core Data"],
-      detailedDescription: "Your cable park wakeboard tricks lexicon app. Complete lexicon of all Cablepark Wakeboard tricks. Add tricks to track progress and create wish lists for training goals.",
+      detailedDescription: `Developed in SwiftUI with Firebase as the backend infrastructure, WakeTricks is a comprehensive wakeboarding trick tracker and learning platform designed to solve a critical problem in wakeboarding instruction: coaches cannot demonstrate tricks while teaching. The app serves as both a personal progression tracker for riders and an instant reference tool for coaches, providing structured trick explanations and video demonstrations accessible at the waterfront.
+
+Built as a concept test during a 13-week iOS development course, WakeTricks demonstrates foundational mobile architecture and database design principles that will expand into a full-featured social platform for the wakeboarding community.
+
+Key Features:
+• Guest-Friendly Architecture: The app operates without authentication requirements, allowing immediate access to the complete Trick Lexicon. Sign-in unlocks personalization features including custom trick lists, favorites, and progress tracking.
+• Intelligent Filtering System: Three difficulty levels (Beginner, Intermediate, Advanced) and three trick categories (Surface, Kicker, Rail) enable precise search functionality for both learning progression and coaching reference.
+• Wikipedia-Style Navigation: Clickable glossary terms embedded throughout trick descriptions create an interconnected knowledge base, allowing beginners to understand wakeboarding linguistics without prior knowledge.
+• Gamified Progress Tracking: Three independent progress visualization systems with badge rewards create clear milestone achievements across difficulty levels, motivating continued skill development.
+• Integrated Video Learning: Embedded YouTube demonstrations provide visual reference for trick execution, eliminating the need for coaches to demonstrate physically.
+
+Core Systems:
+• Trick Lexicon Database: Designed with logical ID conventions and normalized data architecture to minimize redundancy. Trick names derive dynamically from glossary components, creating a maintainable single source of truth. The prerequisite system establishes dependency connections between tricks, generating a skill tree that guides users from foundational techniques to advanced combinations.
+• Dual-State UI Management: Context-aware interface rendering adapts between guest and authenticated states, displaying appropriate functionality while preventing stale data persistence across user sessions.
+• Hybrid Firebase Architecture: Strategic separation of concerns across Firebase services—Realtime Database stores the trick lexicon in JSON format enabling AI-assisted bulk data creation, Firestore Database manages user profiles for superior query performance, and Firebase Storage handles dynamic asset delivery allowing post-deployment visual updates.
+
+Technical Architecture:
+The modular database design implements a prerequisite dependency system where complex tricks reference their component skills. This creates an intuitive progression path, showing riders which foundational tricks they need to master before attempting advanced maneuvers, while also revealing advanced tricks that build upon skills they already possess.
+
+SwiftData provides efficient local persistence, reducing network dependency for core functionality. Firebase Auth handles user authentication with minimal friction, while the separation of Realtime Database and Firestore Database optimizes for their respective strengths—bulk JSON manipulation versus structured querying.
+
+Key Learnings:
+• State Management Complexity: Implementing dual authentication states across multiple navigation tabs required careful consideration of data flow and UI synchronization. Preventing cached user data from displaying to subsequent users demanded explicit state clearing mechanisms.
+• Data Architecture Design: Constructing a logical ID system and prerequisite dependency graph required balancing data normalization with query performance. Deriving trick names from glossary components reduced redundancy while maintaining flexibility.
+• Mock Data Strategy: Creating comprehensive mock data sets enabled UI development independent of backend availability and provided realistic preview environments during development.
+• Code Organization: First exposure to separating concerns across view models, data models, and service layers established patterns for maintainable architecture.
+• Strategic Technology Selection: Choosing between Firebase services based on their specific strengths (JSON bulk operations vs. structured queries) demonstrated practical database architecture decisions.
+
+Foundation for Future Development:
+WakeTricks represents a foundational iOS project where core mobile development concepts were implemented from scratch. The prerequisite system, dual-state authentication, and modular database architecture established patterns that inform subsequent development work. The planned expansion includes social features for friend competition, community video sharing, timestamp-based progress tracking, and comprehensive media upload functionality—transforming the current learning tool into a full social platform for the wakeboarding community.`,
     },
     {
       title: "Learning Project",
