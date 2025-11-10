@@ -68,20 +68,46 @@ WakeTricks represents a foundational iOS project where core mobile development c
       title: "Basecamp",
       description: "Multi-User Room Reservation & Session Management System",
       images: [basecampLogo, basecampLogo, basecampLogo, basecampLogo],
-      techStack: ["Kotlin", "Firebase", "Android", "Room Database", "MVVM", "Material Design"],
-      detailedDescription: `This project was created by a team of 5 developers. It's an Android application that handles company-wide room reservations, session management, and multiple categories using Kotlin, Firebase, and Room Database.
+      techStack: ["Kotlin", "Jetpack Compose", "Firebase Auth", "Firestore", "Firebase Realtime Database", "Room Database", "StateFlow", "Navigation Compose"],
+      detailedDescription: `Developed in Kotlin with Jetpack Compose and Firebase backend infrastructure, BaseCamp is an apartment rental management platform enabling users to book accommodations with customizable additions like gym memberships and kitchen access. As one of five developers during a 13-week Android Programming course, I was responsible for the navigation architecture, state management systems, social features, and GitHub workflow management.
 
-I handled data flow, authentication, and Room–Firestore integration. Our reference client was XIOR, and the app scaled into a global booking system adaptable for any company.
+## My Contributions
 
-Key Learnings:
-• Room & Firestore Integration: Combined offline and online data persistence for a seamless experience
-• Authentication Handling: Implemented user sessions, profiles, and security with Firebase Auth
-• Team Collaboration: Built features collaboratively using shared Git workflows and modularized Kotlin code
-• Enterprise Logic: Structured apps for larger organizations with categories, roles, and data flows
-• Scalable Design: Focused on patterns allowing any company to adapt the platform easily
+**Root Navigation Architecture**: Designed and implemented the three-state application flow managing authentication, company selection, and main app access. The Root component orchestrates conditional rendering based on user authentication status and company context, ensuring users progress through the correct onboarding sequence before accessing core features.
 
-Foundation for Future Projects:
-The architectural and database patterns used here evolved directly into NexuHub Campus. This is where I established MVVM structure, modularized logic, and professional collaboration patterns that now define my development standards.`,
+**Global State Management**: Created the UserSession singleton to maintain centralized user data across the application. This system manages profile data, company context, and session lifecycle, preventing stale data persistence when users sign out—a critical requirement for multi-user device scenarios.
+
+**Tab Navigation System**: Built the primary four-tab navigation structure (Home, Booking, Social, Profile) with persistent state management through the AppState singleton. This architecture maintains user position across tab switches, preserving context even during deep navigation flows.
+
+**Social Tab Infrastructure**: Developed the complete social feature set including a nested sub-tab system for QnA, Forum, and Messaging. The QnA system implements role-based functionality where admins can publish, hide, create, and edit content while regular users access published questions with expandable answers.
+
+**Role-Based Messaging System**: Designed the messaging navigation architecture with conditional rendering based on user privileges. SuperUsers access a console for managing chat requests and active conversations, while regular users interact with a simplified interface for initiating support chats and viewing conversation history.
+
+**Development Workflow Management**: Established the team's GitHub workflow, organized dependency management in Gradle files with clear documentation, and configured the gitIgnore to resolve environment inconsistencies across team members' local setups.
+
+## Technical Architecture
+
+The navigation system employs a hierarchical structure where Root manages application-level state, TabNavigation handles primary sections, and nested NavHosts control feature-specific flows. The UserSession object uses StateFlow to provide reactive data access throughout the application, ensuring UI updates automatically reflect session changes.
+
+Firebase services are strategically distributed—Authentication for user management, Firestore for structured data queries, and Realtime Database for specific real-time requirements. Room Database provides local caching to reduce network dependency and improve performance.
+
+The messaging system demonstrates role-based UI composition, where the same navigation entry point renders completely different interfaces based on user privileges. This pattern extends throughout the social features, enabling flexible permission management without code duplication.
+
+## Key Learnings
+
+**Multi-State Navigation Complexity**: Implementing the three-stage authentication and company selection flow required careful state management to prevent navigation loops and ensure data loaded in the correct sequence. The LaunchedEffect implementations in Root orchestrate asynchronous initialization while maintaining UI responsiveness.
+
+**Session State Synchronization**: Preventing stale user data across sign-in sessions demanded explicit state clearing mechanisms. Understanding StateFlow lifecycle and ensuring proper cleanup patterns became essential for data integrity.
+
+**Merge Conflict Resolution**: As the team's GitHub lead, resolving complex merge conflicts required understanding code at a high level to preserve each developer's work. With team members new to version control, I developed strategies for identifying intent behind conflicting changes and implementing solutions that maintained functionality across branches.
+
+**Dependency Organization**: Structuring the Gradle configuration with clear comments and logical grouping enabled team members to add dependencies confidently. This organization reduced configuration errors and maintained consistent versioning across Firebase services using the BOM pattern.
+
+**Nested Navigation Architecture**: Building navigation hierarchies with multiple levels (main tabs → social sub-tabs → feature screens) required understanding Navigation Compose's backstack management and state preservation patterns.
+
+## Foundation for Future Development
+
+BaseCamp represents practical experience in collaborative Android development where architectural decisions directly impacted team productivity. The navigation patterns, state management systems, and role-based UI composition established here demonstrate scalable approaches to building multi-user applications with complex permission models. The emphasis on team-oriented code organization and version control management reflects the realities of collaborative software development.`,
     },
     {
       title: "Intermediate App",
