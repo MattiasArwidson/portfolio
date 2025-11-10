@@ -17,7 +17,7 @@ const Hero = () => {
           onClick={scrollToProjects}
           className="group relative px-8 py-4 text-lg font-medium text-primary-foreground bg-primary rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)]"
         >
-          <span className="relative z-10">View My Work</span>
+          <span className="relative z-10">View My Applications</span>
           <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </button>
       </div>
