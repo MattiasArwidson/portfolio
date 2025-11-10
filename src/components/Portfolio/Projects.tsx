@@ -11,7 +11,21 @@ import wakeTricksScreen4 from "@/assets/wake_tricks_screenshot_4.png";
 import wakeTricksScreen5 from "@/assets/wake_tricks_screenshot_5.png";
 import wakeTricksScreen6 from "@/assets/wake_tricks_screenshot_6.png";
 import wakeTricksScreen7 from "@/assets/wake_tricks_screenshot_7.png";
-import placeholderIcon from "@/assets/placeholder_app_icon.png";
+import nexuhubLogo from "@/assets/nexuhub_development_logo_light.png";
+import nexuhubScreen1 from "@/assets/nexuhub_development_screenshot_as_classprofile.png";
+import nexuhubScreen2 from "@/assets/nexuhub_development_screenshot_as_classrequestsettings.png";
+import nexuhubScreen3 from "@/assets/nexuhub_development_screenshot_as_editclass.png";
+import nexuhubScreen4 from "@/assets/nexuhub_development_screenshot_as_editschool.png";
+import nexuhubScreen5 from "@/assets/nexuhub_development_screenshot_as_globalpromotionsettings.png";
+import nexuhubScreen6 from "@/assets/nexuhub_development_screenshot_as_manageclassusers.png";
+import nexuhubScreen7 from "@/assets/nexuhub_development_screenshot_as_manageschooladmins.png";
+import nexuhubScreen8 from "@/assets/nexuhub_development_screenshot_as_newsfeed.png";
+import nexuhubScreen9 from "@/assets/nexuhub_development_screenshot_as_schooladminrequestsettings.png";
+import nexuhubScreen10 from "@/assets/nexuhub_development_screenshot_as_schoolselect.png";
+import nexuhubScreen11 from "@/assets/nexuhub_development_screenshot_as_wiki.png";
+import nexuhubFigma1 from "@/assets/nexuhub_development_screenshot_figma_bottombar_multicolor.png";
+import nexuhubFigma2 from "@/assets/nexuhub_development_screenshot_figma_post_multicolor.png";
+import nexuhubFigma3 from "@/assets/nexuhub_development_screenshot_figma_schoolicons.png";
 
 const Projects = () => {
   const projects = [
@@ -76,29 +90,10 @@ SwiftData provides efficient local persistence, reducing network dependency for 
 WakeTricks represents a foundational iOS project where core mobile development concepts were implemented from scratch. The prerequisite system, dual-state authentication, and modular database architecture established patterns that inform subsequent development work. The planned expansion includes social features for friend competition, community video sharing, timestamp-based progress tracking, and comprehensive media upload functionality—transforming the current learning tool into a full social platform for the wakeboarding community.`,
     },
     {
-      title: "Learning Project",
-      description: "Early development project",
-      images: [placeholderIcon, placeholderIcon, placeholderIcon],
-      techStack: ["React", "TypeScript"],
-      detailedDescription: `Early learning project exploring fundamental programming concepts and application development.
-
-## Foundation
-
-This project represents the initial steps in web development, focusing on core React and TypeScript fundamentals. Built during early learning phases, it demonstrates basic component architecture, state management, and type safety principles.
-
-## Key Learnings
-
-**Component-Based Architecture**: Understanding how to break down user interfaces into reusable, modular components.
-
-**TypeScript Integration**: Learning to leverage static typing for improved code reliability and developer experience.
-
-**Development Workflow**: Establishing foundational practices for version control, dependency management, and project organization.`,
-    },
-    {
       title: "Basecamp",
       description: "Multi-User Room Reservation & Session Management System",
       images: [basecampLogo, basecampScreen1, basecampScreen2, basecampScreen3],
-      techStack: ["Kotlin", "Jetpack Compose", "Firebase Auth", "Firestore", "Firebase Realtime Database", "Room Database", "StateFlow", "Navigation Compose"],
+      techStack: ["Kotlin", "Jetpack Compose", "Firebase Auth", "Firestore Database", "Firebase Realtime Database", "Room Database", "StateFlow", "Navigation Compose"],
       detailedDescription: `Developed in Kotlin with Jetpack Compose and Firebase backend infrastructure, BaseCamp is an apartment rental management platform enabling users to book accommodations with customizable additions like gym memberships and kitchen access. As one of five developers during a 13-week Android Programming course, I was responsible for the navigation architecture, state management systems, social features, and GitHub workflow management.
 
 ## My Contributions
@@ -143,17 +138,22 @@ BaseCamp represents practical experience in collaborative Android development wh
       title: "NexuHub Campus",
       description: "Educational Platform & Multi-Role Data Management System",
       images: [
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-      ],
+  nexuhubLogo,
+  nexuhubScreen1,
+  nexuhubScreen2,
+  nexuhubScreen3,
+  nexuhubScreen4,
+  nexuhubScreen5,
+  nexuhubScreen6,
+  nexuhubScreen7,
+  nexuhubScreen8,
+  nexuhubScreen9,
+  nexuhubScreen10,
+  nexuhubScreen11,
+  nexuhubFigma1,
+  nexuhubFigma2,
+  nexuhubFigma3,
+],
       techStack: [
         "Kotlin",
         "Jetpack Compose",
@@ -219,9 +219,9 @@ NexuHub Campus represents a milestone project where enterprise-grade concepts me
   return (
     <section id="projects" className="min-h-screen px-6 md:px-12 lg:px-24 py-20">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">Projects</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">Applicaitons </h2>
         <p className="text-xl text-muted-foreground mb-12">
-          A journey from beginner to advanced development
+          A small portfolio of applications I've developed, showcasing my skills in mobile app development, UI/UX design, and backend integration.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
