@@ -66,7 +66,7 @@ const ProjectCard = ({
           <div className="relative bg-card border border-border rounded-xl max-w-5xl w-full max-h-[90vh] overflow-y-auto p-8">
             <button
               onClick={() => setIsExpanded(false)}
-              className="absolute top-4 right-4 p-2 rounded-lg bg-secondary hover:bg-muted transition-colors"
+              className="sticky top-0 float-right p-2 rounded-lg bg-secondary hover:bg-muted transition-colors z-10 mb-4"
             >
               <X className="w-6 h-6" />
             </button>
@@ -83,7 +83,7 @@ const ProjectCard = ({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {images.map((image, idx) => (
                 <div key={idx} className="relative aspect-video w-full rounded-lg bg-muted group cursor-pointer">
-                  <div className="absolute inset-0 overflow-hidden rounded-lg transition-all duration-300 group-hover:z-50 group-hover:scale-200 group-hover:rounded-none">
+                  <div className="absolute inset-0 overflow-hidden rounded-lg transition-all duration-300 group-hover:z-50 group-hover:scale-150 group-hover:rounded-none">
                     <img
                       src={image || "/placeholder.svg"}
                       alt={`${title} screenshot ${idx + 1}`}

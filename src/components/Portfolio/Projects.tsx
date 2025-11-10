@@ -25,7 +25,7 @@ const Projects = () => {
         wakeTricksScreen6,
         wakeTricksScreen7,
       ],
-      techStack: ["Swift", "SwiftUI", "iOS", "Core Data"],
+      techStack: ["Swift", "SwiftUI", "Firebase Realtime Database", "Firestore", "Firebase Auth", "Firebase Storage", "SwiftData", "iOS"],
       detailedDescription: `Developed in SwiftUI with Firebase as the backend infrastructure, WakeTricks is a comprehensive wakeboarding trick tracker and learning platform designed to solve a critical problem in wakeboarding instruction: coaches cannot demonstrate tricks while teaching. The app serves as both a personal progression tracker for riders and an instant reference tool for coaches, providing structured trick explanations and video demonstrations accessible at the waterfront.
 
 Built as a concept test during a 13-week iOS development course, WakeTricks demonstrates foundational mobile architecture and database design principles that will expand into a full-featured social platform for the wakeboarding community.
