@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X, ExternalLink, Github } from "lucide-react";
+import MarkdownContent from "./MarkdownContent";
 
 interface ProjectCardProps {
   title: string;
@@ -75,8 +76,8 @@ const ProjectCard = ({
             <p className="text-xl text-muted-foreground mb-6">{description}</p>
 
             {detailedDescription && (
-              <div className="mb-6 text-muted-foreground whitespace-pre-line">
-                {detailedDescription}
+              <div className="mb-8">
+                <MarkdownContent content={detailedDescription} />
               </div>
             )}
 
