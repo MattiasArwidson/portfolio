@@ -1,5 +1,8 @@
 import ProjectCard from "./ProjectCard";
 import basecampLogo from "@/assets/basecamp_logo.png";
+import basecampScreen1 from "@/assets/basecamp_screenshot_1.png";
+import basecampScreen2 from "@/assets/basecamp_screenshot_2.png";
+import basecampScreen3 from "@/assets/basecamp_screenshot_3.png";
 import wakeTricksIcon from "@/assets/wake_tricks_icon.png";
 import wakeTricksScreen1 from "@/assets/wake_tricks_screenshot_1.png";
 import wakeTricksScreen2 from "@/assets/wake_tricks_screenshot_2.png";
@@ -30,31 +33,46 @@ const Projects = () => {
 
 Built as a concept test during a 13-week iOS development course, WakeTricks demonstrates foundational mobile architecture and database design principles that will expand into a full-featured social platform for the wakeboarding community.
 
-Key Features:
-• Guest-Friendly Architecture: The app operates without authentication requirements, allowing immediate access to the complete Trick Lexicon. Sign-in unlocks personalization features including custom trick lists, favorites, and progress tracking.
-• Intelligent Filtering System: Three difficulty levels (Beginner, Intermediate, Advanced) and three trick categories (Surface, Kicker, Rail) enable precise search functionality for both learning progression and coaching reference.
-• Wikipedia-Style Navigation: Clickable glossary terms embedded throughout trick descriptions create an interconnected knowledge base, allowing beginners to understand wakeboarding linguistics without prior knowledge.
-• Gamified Progress Tracking: Three independent progress visualization systems with badge rewards create clear milestone achievements across difficulty levels, motivating continued skill development.
-• Integrated Video Learning: Embedded YouTube demonstrations provide visual reference for trick execution, eliminating the need for coaches to demonstrate physically.
+## Key Features
 
-Core Systems:
-• Trick Lexicon Database: Designed with logical ID conventions and normalized data architecture to minimize redundancy. Trick names derive dynamically from glossary components, creating a maintainable single source of truth. The prerequisite system establishes dependency connections between tricks, generating a skill tree that guides users from foundational techniques to advanced combinations.
-• Dual-State UI Management: Context-aware interface rendering adapts between guest and authenticated states, displaying appropriate functionality while preventing stale data persistence across user sessions.
-• Hybrid Firebase Architecture: Strategic separation of concerns across Firebase services—Realtime Database stores the trick lexicon in JSON format enabling AI-assisted bulk data creation, Firestore Database manages user profiles for superior query performance, and Firebase Storage handles dynamic asset delivery allowing post-deployment visual updates.
+**Guest-Friendly Architecture**: The app operates without authentication requirements, allowing immediate access to the complete Trick Lexicon. Sign-in unlocks personalization features including custom trick lists, favorites, and progress tracking.
 
-Technical Architecture:
+**Intelligent Filtering System**: Three difficulty levels (Beginner, Intermediate, Advanced) and three trick categories (Surface, Kicker, Rail) enable precise search functionality for both learning progression and coaching reference.
+
+**Wikipedia-Style Navigation**: Clickable glossary terms embedded throughout trick descriptions create an interconnected knowledge base, allowing beginners to understand wakeboarding linguistics without prior knowledge.
+
+**Gamified Progress Tracking**: Three independent progress visualization systems with badge rewards create clear milestone achievements across difficulty levels, motivating continued skill development.
+
+**Integrated Video Learning**: Embedded YouTube demonstrations provide visual reference for trick execution, eliminating the need for coaches to demonstrate physically.
+
+## Core Systems
+
+**Trick Lexicon Database**: Designed with logical ID conventions and normalized data architecture to minimize redundancy. Trick names derive dynamically from glossary components, creating a maintainable single source of truth. The prerequisite system establishes dependency connections between tricks, generating a skill tree that guides users from foundational techniques to advanced combinations.
+
+**Dual-State UI Management**: Context-aware interface rendering adapts between guest and authenticated states, displaying appropriate functionality while preventing stale data persistence across user sessions.
+
+**Hybrid Firebase Architecture**: Strategic separation of concerns across Firebase services—Realtime Database stores the trick lexicon in JSON format enabling AI-assisted bulk data creation, Firestore Database manages user profiles for superior query performance, and Firebase Storage handles dynamic asset delivery allowing post-deployment visual updates.
+
+## Technical Architecture
+
 The modular database design implements a prerequisite dependency system where complex tricks reference their component skills. This creates an intuitive progression path, showing riders which foundational tricks they need to master before attempting advanced maneuvers, while also revealing advanced tricks that build upon skills they already possess.
 
 SwiftData provides efficient local persistence, reducing network dependency for core functionality. Firebase Auth handles user authentication with minimal friction, while the separation of Realtime Database and Firestore Database optimizes for their respective strengths—bulk JSON manipulation versus structured querying.
 
-Key Learnings:
-• State Management Complexity: Implementing dual authentication states across multiple navigation tabs required careful consideration of data flow and UI synchronization. Preventing cached user data from displaying to subsequent users demanded explicit state clearing mechanisms.
-• Data Architecture Design: Constructing a logical ID system and prerequisite dependency graph required balancing data normalization with query performance. Deriving trick names from glossary components reduced redundancy while maintaining flexibility.
-• Mock Data Strategy: Creating comprehensive mock data sets enabled UI development independent of backend availability and provided realistic preview environments during development.
-• Code Organization: First exposure to separating concerns across view models, data models, and service layers established patterns for maintainable architecture.
-• Strategic Technology Selection: Choosing between Firebase services based on their specific strengths (JSON bulk operations vs. structured queries) demonstrated practical database architecture decisions.
+## Key Learnings
 
-Foundation for Future Development:
+**State Management Complexity**: Implementing dual authentication states across multiple navigation tabs required careful consideration of data flow and UI synchronization. Preventing cached user data from displaying to subsequent users demanded explicit state clearing mechanisms.
+
+**Data Architecture Design**: Constructing a logical ID system and prerequisite dependency graph required balancing data normalization with query performance. Deriving trick names from glossary components reduced redundancy while maintaining flexibility.
+
+**Mock Data Strategy**: Creating comprehensive mock data sets enabled UI development independent of backend availability and provided realistic preview environments during development.
+
+**Code Organization**: First exposure to separating concerns across view models, data models, and service layers established patterns for maintainable architecture.
+
+**Strategic Technology Selection**: Choosing between Firebase services based on their specific strengths (JSON bulk operations vs. structured queries) demonstrated practical database architecture decisions.
+
+## Foundation for Future Development
+
 WakeTricks represents a foundational iOS project where core mobile development concepts were implemented from scratch. The prerequisite system, dual-state authentication, and modular database architecture established patterns that inform subsequent development work. The planned expansion includes social features for friend competition, community video sharing, timestamp-based progress tracking, and comprehensive media upload functionality—transforming the current learning tool into a full social platform for the wakeboarding community.`,
     },
     {
@@ -62,12 +80,24 @@ WakeTricks represents a foundational iOS project where core mobile development c
       description: "Early development project",
       images: [placeholderIcon, placeholderIcon, placeholderIcon],
       techStack: ["React", "TypeScript"],
-      detailedDescription: "Early learning project exploring fundamental programming concepts and application development.",
+      detailedDescription: `Early learning project exploring fundamental programming concepts and application development.
+
+## Foundation
+
+This project represents the initial steps in web development, focusing on core React and TypeScript fundamentals. Built during early learning phases, it demonstrates basic component architecture, state management, and type safety principles.
+
+## Key Learnings
+
+**Component-Based Architecture**: Understanding how to break down user interfaces into reusable, modular components.
+
+**TypeScript Integration**: Learning to leverage static typing for improved code reliability and developer experience.
+
+**Development Workflow**: Establishing foundational practices for version control, dependency management, and project organization.`,
     },
     {
       title: "Basecamp",
       description: "Multi-User Room Reservation & Session Management System",
-      images: [basecampLogo, basecampLogo, basecampLogo, basecampLogo],
+      images: [basecampLogo, basecampScreen1, basecampScreen2, basecampScreen3],
       techStack: ["Kotlin", "Jetpack Compose", "Firebase Auth", "Firestore", "Firebase Realtime Database", "Room Database", "StateFlow", "Navigation Compose"],
       detailedDescription: `Developed in Kotlin with Jetpack Compose and Firebase backend infrastructure, BaseCamp is an apartment rental management platform enabling users to book accommodations with customizable additions like gym memberships and kitchen access. As one of five developers during a 13-week Android Programming course, I was responsible for the navigation architecture, state management systems, social features, and GitHub workflow management.
 
@@ -110,24 +140,6 @@ The messaging system demonstrates role-based UI composition, where the same navi
 BaseCamp represents practical experience in collaborative Android development where architectural decisions directly impacted team productivity. The navigation patterns, state management systems, and role-based UI composition established here demonstrate scalable approaches to building multi-user applications with complex permission models. The emphasis on team-oriented code organization and version control management reflects the realities of collaborative software development.`,
     },
     {
-      title: "Intermediate App",
-      description: "Full-stack blog platform with authentication",
-      images: [
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-        "/placeholder.svg",
-      ],
-      techStack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
-      detailedDescription: "Built a complete blog platform with user authentication, post creation, comments, and likes. Implemented RESTful API design, authentication middleware, and database relationships. This project solidified my understanding of full-stack development.",
-      links: {
-        github: "#",
-        demo: "#",
-      },
-    },
-    {
       title: "NexuHub Campus",
       description: "Educational Platform & Multi-Role Data Management System",
       images: [
@@ -158,29 +170,44 @@ Developed in Kotlin with Jetpack Compose as the frontend framework and Firebase 
 
 The app is built to serve as an adaptable foundation for schools, universities, and training organizations. It provides a structured environment where students and teachers can interact dynamically, share knowledge, and stay synchronized through real-time data and modular design.
 
-Key Features:
-• Multi-Role System: Dynamic UI rendering based on user role (Guest, Student, Class Rep, Teacher, Admin, Super Admin)
-• Secure Authentication: Email verification and role-based permission control via Firestore Security Rules
-• Real-Time Communication: Integrated chat and collaboration powered by Firestore's live listeners
-• Modular Database Design: Scalable data structure for multi-school and multi-class environments with isolated "biomes"
-• Media Management: Dedicated storage handled via Firebase Storage for efficiency and security
+## Key Features
 
-Core Systems:
-• News Feed: Combined internal school updates with external tech/education insights using asynchronous Firestore listeners
-• Wiki Feed: Collaborative knowledge base with tag-based categorization, version control, and real-time synchronization
-• Navigation System: Rebuilt using Jetpack Compose Navigation 3 for state-driven navigation and improved UX
+**Multi-Role System**: Dynamic UI rendering based on user role (Guest, Student, Class Rep, Teacher, Admin, Super Admin).
 
-Security Architecture:
+**Secure Authentication**: Email verification and role-based permission control via Firestore Security Rules.
+
+**Real-Time Communication**: Integrated chat and collaboration powered by Firestore's live listeners.
+
+**Modular Database Design**: Scalable data structure for multi-school and multi-class environments with isolated "biomes".
+
+**Media Management**: Dedicated storage handled via Firebase Storage for efficiency and security.
+
+## Core Systems
+
+**News Feed**: Combined internal school updates with external tech/education insights using asynchronous Firestore listeners.
+
+**Wiki Feed**: Collaborative knowledge base with tag-based categorization, version control, and real-time synchronization.
+
+**Navigation System**: Rebuilt using Jetpack Compose Navigation 3 for state-driven navigation and improved UX.
+
+## Security Architecture
+
 Each school and class context is isolated to prevent unauthorized access. Role-based visibility, context-aware profiles tied to SchoolID and ClassID, and UI that dynamically adapts to user privileges ensure data privacy in educational environments.
 
-Key Learnings:
-• Advanced Architecture: Designed modular MVVM structure supporting scalability and clean data separation
-• Security by Design: Implemented context-based access with strict Firestore rules and adaptive UI control
-• Real-Time Synchronization: Efficient use of asynchronous Firestore listeners for continuous updates
-• State-Driven Navigation: Adopted Compose Navigation 3 for improved UX and flow management
-• Collaborative Development: Built complex systems within a coordinated team
+## Key Learnings
 
-Foundation for Future Development:
+**Advanced Architecture**: Designed modular MVVM structure supporting scalability and clean data separation.
+
+**Security by Design**: Implemented context-based access with strict Firestore rules and adaptive UI control.
+
+**Real-Time Synchronization**: Efficient use of asynchronous Firestore listeners for continuous updates.
+
+**State-Driven Navigation**: Adopted Compose Navigation 3 for improved UX and flow management.
+
+**Collaborative Development**: Built complex systems within a coordinated team.
+
+## Foundation for Future Development
+
 NexuHub Campus represents a milestone project where enterprise-grade concepts met educational application design. Many of the architectural patterns and data-handling principles refined here evolved from Basecamp and have since become my standard for modern Android development.`,
       links: {
         github: "#",
