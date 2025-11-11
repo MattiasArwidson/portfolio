@@ -104,10 +104,10 @@ Each school and class context is isolated to prevent unauthorized access. Role-b
 ## Foundation for Future Development
 
 NexuHub Campus represents a milestone project where enterprise-grade concepts met educational application design. Many of the architectural patterns and data-handling principles refined here evolved from Basecamp and have since become my standard for modern Android development.`,
-      links: {
-        github: "#",
-        demo: "#",
-      },
+      //links: {
+      //  github: "#",
+      //  demo: "#",
+      //},
     },
     {
       title: "Wake Tricks",
