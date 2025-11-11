@@ -5,11 +5,11 @@ import basecampScreen2 from "@/assets/basecamp_screenshot_forum_messages_user.pn
 import basecampScreen3 from "@/assets/basecamp_screenshot_forum_sub-tab.png";
 import wakeTricksIcon from "@/assets/wake_tricks_icon.png";
 import wakeTricksScreen1 from "@/assets/wake_tricks_screenshot_1.png";
-import wakeTricksScreen2 from "@/assets/wake_tricks_screenshot_2.png";
-import wakeTricksScreen3 from "@/assets/wake_tricks_screenshot_3.png";
-import wakeTricksScreen4 from "@/assets/wake_tricks_screenshot_4.png";
+import wakeTricksScreen2 from "@/assets/wake_tricks_screenshot_4.png";
+import wakeTricksScreen3 from "@/assets/wake_tricks_screenshot_2.png";
+import wakeTricksScreen4 from "@/assets/wake_tricks_screenshot_6.png";
 import wakeTricksScreen5 from "@/assets/wake_tricks_screenshot_5.png";
-import wakeTricksScreen6 from "@/assets/wake_tricks_screenshot_6.png";
+import wakeTricksScreen6 from "@/assets/wake_tricks_screenshot_3.png";
 import wakeTricksScreen7 from "@/assets/wake_tricks_screenshot_7.png";
 import nexuhubLogo from "@/assets/nexuhub_development_logo_light.png";
 import nexuhubScreen1 from "@/assets/nexuhub_development_screenshot_as_classprofile.png";
@@ -158,15 +158,15 @@ The development team consists of three developers, with shared responsibilities 
       title: "Wake Tricks",
       description: "Cable park wakeboard tricks lexicon app for iOS",
       images: [
-        wakeTricksIcon,
-        wakeTricksScreen1,
-        wakeTricksScreen2,
-        wakeTricksScreen3,
-        wakeTricksScreen4,
-        wakeTricksScreen5,
-        wakeTricksScreen6,
-        wakeTricksScreen7,
-      ],
+        { src: wakeTricksIcon, caption: "App icon, created with the ActionAwareness logo and the app name." },
+    { src: wakeTricksScreen1, caption: "This is what the user sees if they go to the profile tab, without being signed in." },
+    { src: wakeTricksScreen2, caption: "This is an example of how a profile can look like. There are three levels of tricks being displayed and they have a separate progression system with a percentage of the total tricks completed shown. They also have tiers that's spread out at different percentage thresholds. The Trick List is hidden and the Wish List is displaying all 3 tricks the user has favorized." },
+    { src: wakeTricksScreen3, caption: "This is showing another stage of progression for the user, now with a few intermediate tricks completed aswell." },
+    { src: wakeTricksScreen4, caption: "This displays the sorting functionality of the Trick List. In this image the user is not signed in, notice the difference on the right side of the image when looking at the next image." },
+    { src: wakeTricksScreen5, caption: "This displays the Trick List when signed in, where the user can check completed tricks and favorite tricks." },
+    { src: wakeTricksScreen6, caption: "This screenshot displays the details view of a trick in the background, the user has pressed the \"Rail\" glossary word, to display more information." },
+    { src: wakeTricksScreen7, caption: "Screenshot from Google Play." },
+  ],
       techStack: ["Swift", "SwiftUI", "Firebase Realtime Database", "Firestore", "Firebase Auth", "Firebase Storage", "SwiftData", "iOS"],
       detailedDescription: `Developed in SwiftUI with Firebase as the backend infrastructure, WakeTricks is a comprehensive wakeboarding trick tracker and learning platform designed to solve a critical problem in wakeboarding instruction: coaches cannot demonstrate tricks while teaching. The app serves as both a personal progression tracker for riders and an instant reference tool for coaches, providing structured trick explanations and video demonstrations accessible at the waterfront.
 
