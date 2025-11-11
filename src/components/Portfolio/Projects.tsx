@@ -2,7 +2,7 @@ import ProjectCard from "./ProjectCard";
 import basecampLogo from "@/assets/basecamp_logo.png";
 import basecampScreen1 from "@/assets/basecamp_screenshot_forum_sub-tab.png";
 import basecampScreen2 from "@/assets/basecamp_screenshot_forum_messages_user.png";
-import basecampScreen3 from "@/assets/basecamp_screenshot_forum_sub-tab.png";
+import basecampScreen3 from "@/assets/basecamp_screenshot_register.png";
 import wakeTricksIcon from "@/assets/wake_tricks_icon.png";
 import wakeTricksScreen1 from "@/assets/wake_tricks_screenshot_1.png";
 import wakeTricksScreen2 from "@/assets/wake_tricks_screenshot_4.png";
@@ -33,21 +33,21 @@ const Projects = () => {
       title: "NexuHub Campus",
       description: "Educational Platform & Multi-Role Data Management System",
       images: [
-  nexuhubLogo,
-  nexuhubScreen1,
-  nexuhubScreen2,
-  nexuhubScreen3,
-  nexuhubScreen4,
-  nexuhubScreen5,
-  nexuhubScreen6,
-  nexuhubScreen7,
-  nexuhubScreen8,
-  nexuhubScreen9,
-  nexuhubScreen10,
-  nexuhubScreen11,
-  nexuhubFigma1,
-  nexuhubFigma2,
-  nexuhubFigma3,
+  { src: nexuhubLogo, caption: "NexuHub Campus logo featuring interconnected hexagonal shapes representing collaborative educational networks." },
+  { src: nexuhubScreen1, caption: "Class profile view showing course details, contribution leaderboard, and class member statistics with role-based information display." },
+  { src: nexuhubScreen2, caption: "Class request settings interface for managing teacher and student enrollment with customizable duration settings and public request controls." },
+  { src: nexuhubScreen3, caption: "Edit class screen allowing administrators to modify course information, manage class tags, and configure contact details." },
+  { src: nexuhubScreen4, caption: "Edit school interface with visibility settings, school information fields, and contact management for school administrators." },
+  { src: nexuhubScreen5, caption: "Global promotion settings dashboard managing templates for school admin promotions and class enrollment defaults across all schools." },
+  { src: nexuhubScreen6, caption: "Manage class users interface displaying enrolled teachers, class representatives, and students with role-based edit and remove capabilities." },
+  { src: nexuhubScreen7, caption: "Manage school admins screen with invitation system for adding new administrators to specific schools." },
+  { src: nexuhubScreen8, caption: "News feed displaying user posts with tags, images, and engagement metrics, demonstrating the social features of the platform." },
+  { src: nexuhubScreen9, caption: "School admin request settings showing school-specific promotion templates and default configurations for class enrollment." },
+  { src: nexuhubScreen10, caption: "School selection screen where users choose their school to explore classes, featuring school descriptions and class counts." },
+  { src: nexuhubScreen11, caption: "Wiki interface with search functionality, article sorting options, and user-contributed content with version tracking." },
+  { src: nexuhubFigma1, caption: "Screenshot from Figma design system showcasing the multi-school color theme architecture with five distinct school color palettes for bottom navigation across different schools. Guests and admins will see the NexuHub colors." },
+  { src: nexuhubFigma2, caption: "Screenshot from Figma mockups of forum post creation screens demonstrating how each school's unique color theme adapts the UI consistently." },
+  { src: nexuhubFigma3, caption: "Screenshot from figma, displaying an example school icon color palette system showing primary, secondary, tertiary, and accent colors for five different school brands and our context free NexuHub. Depending on the school the user is associated with, the user can feel right at home with their school colors throughout the app." },
 ],
       techStack: [
 "Kotlin",
@@ -217,7 +217,12 @@ WakeTricks represents a foundational iOS project where core mobile development c
     {
       title: "Basecamp",
       description: "Multi-User Room Reservation & Session Management System",
-      images: [basecampLogo, basecampScreen1, basecampScreen2, basecampScreen3],
+      images: [
+  { src: basecampLogo, caption: "BaseCamp app logo featuring geometric shapes arranged to represent building/housing structure." },
+  { src: basecampScreen1, caption: "SuperUser messaging console view displaying pending chat requests from users and active conversations. This administrative interface allows managing support chats." },
+  { src: basecampScreen2, caption: "Regular user messaging interface showing the option to start new conversations, active support chats, and chat history with resolved conversations." },
+  { src: basecampScreen3, caption: "Registration screen with email and password fields, demonstrating the authentication flow before users can access company selection and main features." },
+],
       techStack: ["Kotlin", "Jetpack Compose", "Firebase Auth", "Firestore Database", "Firebase Realtime Database", "Room Database", "StateFlow", "Navigation Compose"],
       detailedDescription: `Developed in Kotlin with Jetpack Compose and Firebase backend infrastructure, BaseCamp is an apartment rental management platform enabling users to book accommodations with customizable additions like gym memberships and kitchen access. As one of five developers during a 13-week Android Programming course, I was responsible for the navigation architecture, state management systems, social features, and GitHub workflow management.
 
