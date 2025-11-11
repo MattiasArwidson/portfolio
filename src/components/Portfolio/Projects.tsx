@@ -50,65 +50,110 @@ const Projects = () => {
   nexuhubFigma3,
 ],
       techStack: [
-        "Kotlin",
-        "Jetpack Compose",
-        "Firebase Firestore",
-        "Firebase Auth",
-        "Firebase Storage",
-        "MVVM Architecture",
-        "Material Design",
-      ],
-      isFeatured: true,
-      detailedDescription: `NexuHub Campus is a digital education platform designed to unify learning material, schedules, profiles, and user-generated content—such as news, wiki posts, and communication—into one cohesive system.
+"Kotlin",
+"Jetpack Compose",
+"Firebase Firestore",
+"Firebase Auth",
+"Firebase Storage",
+"MVVM Architecture",
+"Material Design 3",
+"Hilt Dependency Injection",
+"Navigation 3",
+"Kotlin Coroutines",
+],
+isFeatured: true,
+detailedDescription: `NexuHub Campus is a digital education platform that unifies learning materials, schedules, profiles, and user-generated content into one cohesive system.
 
-Developed in Kotlin with Jetpack Compose as the frontend framework and Firebase as the backend, the platform supports multiple user roles, real-time updates, and secure access through Firestore, Firebase Auth, and Firebase Storage.
+Developed in Kotlin with Jetpack Compose and Firebase as the backend, the platform supports multiple user roles, real-time updates, and secure access through Firestore, Firebase Auth, and Firebase Storage.
 
-The app is built to serve as an adaptable foundation for schools, universities, and training organizations. It provides a structured environment where students and teachers can interact dynamically, share knowledge, and stay synchronized through real-time data and modular design.
+This is an ongoing project developed alongside the Android Development course at Malmö Yrkeshögskola during Spring 2025. The app represents a culmination of concepts and patterns learned throughout the course, combining solutions and systems built across multiple course projects into a unified platform.
 
-## Key Features
+**Development Team:** Mattias Arwidson, Joel Westerberg, Johan Asklund
 
-**Multi-Role System**: Dynamic UI rendering based on user role (Guest, Student, Class Rep, Teacher, Admin, Super Admin).
+## My Contributions
 
-**Secure Authentication**: Email verification and role-based permission control via Firestore Security Rules.
+**Navigation Architecture:** I designed and implemented the complete navigation system using Navigation 3 with type-safe @Serializable routes. The solution uses a hybrid approach: Navigation 3 for complex flows (authentication, settings) and manual state management for main tabs to preserve user position across app restarts. After encountering state-loss issues with traditional Fragment navigation, I migrated to Compose Navigation 3, which improved UX significantly with proper back-stack handling and persistent tab states.
 
-**Real-Time Communication**: Integrated chat and collaboration powered by Firestore's live listeners.
+**State Management System:** I built the StateRepository pattern that serves as the central hub for app-state (Loading/Auth/Verify/Main). This architecture ensures only one component monitors Firebase Auth changes, eliminating race conditions that occurred when multiple ViewModels tracked auth state simultaneously. The UserRepository handles user profile data with StateFlow, maintaining clean separation between authentication state and user data using the MVVM pattern.
 
-**Modular Database Design**: Scalable data structure for multi-school and multi-class environments with isolated "biomes".
+**Role-Based Permission System:** I implemented a 6-tier role system (Guest → Student → Class Representative → Teacher → School Admin → Super Admin) with 20+ permission-check helper functions in UserProfile.kt for granular access control. The system uses context-aware permissions based on SchoolID/ClassID, with Firestore Security Rules providing server-side validation that mirrors client-side logic. Dynamic UI rendering ensures users only see features they have access to.
 
-**Media Management**: Dedicated storage handled via Firebase Storage for efficiency and security.
+**Component Library:** I extracted 15+ reusable UI components following Material Design 3 guidelines, including ProfileCard, DetailCard, BulletListCard, and ProfilePreviewCard. Each component includes comprehensive previews with ThemeProvider and RoleProvider for testing different states. The centralized theme system manages colors, spacing, and typography, allowing design changes to propagate throughout the app from a single source.
+
+**Schedule & Lesson Management:** I built the complete lesson management system including the Lesson data model (supporting dates, topics, links, and media), LessonRepository for CRUD operations, and the full UI flow for viewing, creating, and editing lessons. The system features real-time Firestore listeners for live updates, smart current-lesson detection, and navigation with prev/next buttons that disable appropriately at list boundaries.
+
+**User Request & Promotion System:** I created the request-to-join system where users can request Student/Teacher access to classes or School Admin access to schools. The system implements multi-level defaults (Super Admin → School Admin → Class) and handles pending states with proper UI feedback. Request visibility is controlled by PromotionSettings with validation checks for both user roles and settings before allowing requests.
+
+**Firebase Security Implementation:** I wrote Firestore Security Rules with context-based validation using helper functions (isAuthenticated, hasClassAccess). The authentication flow includes email verification with error handling, and data isolation ensures each school/class maintains separated "biomes" for data integrity.
+
+**Repository Layer:** I implemented 6 repositories (Auth, User, State, School, Class, Lesson) following the Repository Pattern with StateFlow for reactive data flow from repositories to UI. The system uses Hilt for dependency injection and includes robust error handling with user-friendly messages.
+
+## Key Technical Decisions
+
+**Navigation Strategy:** When initial implementation caused state-loss between tab switches, I evaluated three approaches: traditional Navigation Component with fragments, Navigation 3 with type-safe routes, and manual state management with sealed classes. I chose a hybrid solution using Navigation 3 for complex flows and manual state for main tabs, which preserved user position while maintaining type-safe navigation benefits.
+
+**State Management Refactoring:** Multiple components tracking Firebase Auth state simultaneously caused synchronization issues and race conditions. I refactored to a Single Source of Truth pattern where only StateRepository monitors auth changes, with other components observing its StateFlow. This eliminated state sync bugs and simplified the codebase significantly.
+
+**Security Architecture:** The multi-school environment required strict data isolation. Rather than client-side checks only or server-side Firebase Functions, I implemented Firestore Security Rules with SchoolID/ClassID context validation. Helper functions provide server-side validation while UserProfile helper functions handle client-side UI logic, creating a secure, scalable solution without additional backend infrastructure.
+
+**Component Extraction:** UI code duplication across screens made design changes time-consuming. I built a reusable component library in ui.components with comprehensive previews and centralized styling through the theme system. Design changes now propagate from a single source throughout the app.
+
+**Lesson System Caching:** For lesson display and updates, I implemented a hybrid caching strategy: load once and cache in ViewModel, use real-time Firestore listeners when viewing individual lessons (for teacher edits), manual refresh for lesson lists, and clear cache when leaving ClassRoom. This provides fast UX for students while enabling real-time updates when teachers edit during lessons.
 
 ## Core Systems
 
-**News Feed**: Combined internal school updates with external tech/education insights using asynchronous Firestore listeners.
+**Multi-Role Management:** Dynamic UI rendering based on user role (Guest, Student, Class Representative, Teacher, School Admin, Super Admin). Each role sees only relevant features and data, with permissions checked both client-side for UX and server-side for security.
 
-**Wiki Feed**: Collaborative knowledge base with tag-based categorization, version control, and real-time synchronization.
+**Security Architecture:** Context-aware Firestore Security Rules validate SchoolID/ClassID access. Role-based access control operates at both client and server levels. Email verification is required before platform access. Each school/class maintains isolated "biomes" for data integrity.
 
-**Navigation System**: Rebuilt using Jetpack Compose Navigation 3 for state-driven navigation and improved UX.
+**Real-Time Collaboration:** Teachers can update lessons live while students view them using Firestore listeners. The request system allows students and teachers to request class access, with proper pending state management.
 
-## Security Architecture
+**Scalable Database Design:** Modular structure supporting multiple schools and classes with isolated data contexts, ensuring privacy in educational environments.
 
-Each school and class context is isolated to prevent unauthorized access. Role-based visibility, context-aware profiles tied to SchoolID and ClassID, and UI that dynamically adapts to user privileges ensure data privacy in educational environments.
+## Architecture & Technologies
+
+**MVVM Pattern:** Repositories manage data as single sources of truth, ViewModels handle business logic and UI state, and Composables provide pure UI with callback-based interaction. StateFlow enables reactive data flow from repositories to UI.
+
+**Firebase Integration:** Firestore provides real-time database with security rules, Firebase Auth handles email/password authentication with verification flow, Firebase Storage manages media with access control, and Firestore cache supports offline functionality.
+
+**Modern Android Stack:** Jetpack Compose for declarative UI with Material Design 3, Kotlin Coroutines for asynchronous operations, Hilt for dependency injection and modular architecture, Navigation 3 for type-safe navigation with Serializable routes, and StateFlow/Flows for reactive data streams.
+
+**Component System:** 15+ reusable components (ProfileCard, DetailCard, BulletListCard) with centralized theme system controlling colors, spacing, and typography. Comprehensive preview system tests all UI states following Material Design 3 guidelines.
 
 ## Key Learnings
 
-**Advanced Architecture**: Designed modular MVVM structure supporting scalability and clean data separation.
+**Architecture Patterns:** Learned to design scalable MVVM architecture with clear separation of concerns. Understood when to apply different state management approaches and how to maintain single source of truth in complex applications.
 
-**Security by Design**: Implemented context-based access with strict Firestore rules and adaptive UI control.
+**Navigation Design:** Realized different app sections require different strategies - complex flows work well with Navigation 3, while simpler tab navigation benefits from manual state management.
 
-**Real-Time Synchronization**: Efficient use of asynchronous Firestore listeners for continuous updates.
+**Component Thinking:** Developed ability to identify reusable patterns in UI. Learned when component extraction adds value versus when local components are more appropriate.
 
-**State-Driven Navigation**: Adopted Compose Navigation 3 for improved UX and flow management.
+**Security Implementation:** Gained experience implementing enterprise-grade security with Firestore rules, role-based access control, and context-aware permissions, thinking about security from the start rather than as an afterthought.
 
-**Collaborative Development**: Built complex systems within a coordinated team.
+**Real-Time Systems:** Mastered asynchronous data synchronization with Firestore listeners, handling edge cases like offline support, conflict resolution, and efficient data updates.
 
-## Foundation for Future Development
+**Team Collaboration:** Worked in a team environment with code reviews, architecture discussions, and shared decision-making. Learned to communicate technical decisions and document architecture patterns.
 
-NexuHub Campus represents a milestone project where enterprise-grade concepts met educational application design. Many of the architectural patterns and data-handling principles refined here evolved from Basecamp and have since become my standard for modern Android development.`,
-      //links: {
-      //  github: "#",
-      //  demo: "#",
-      //},
-    },
+**State-Driven UI:** Developed understanding of building UI that reacts to state changes, learning to avoid common pitfalls like state duplication and race conditions.
+
+## Project Evolution
+
+NexuHub Campus represents the culmination of concepts refined across multiple projects during the Android Development course at Malmö Yrkeshögskola. Solutions to problems encountered in earlier course projects were integrated into this platform, with architecture patterns around state management, component extraction, and security becoming fundamental to the development approach.
+
+The app is an ongoing project, not finished or published, serving as a practical application of course learnings combined with enterprise-level architectural decisions.
+
+**Project Scale:**
+- ~15,000+ lines of Kotlin code
+- 40+ Composable components
+- 6 distinct user permission levels
+- 8 main Firebase collections with subcollections
+- 6 data repositories
+- 20+ screens and navigation flows
+
+**Team Collaboration:**
+The development team consists of three developers, with shared responsibilities including Firebase database design, code reviews, architecture decisions, UI/UX refinements, and testing. Development follows Git-based workflows with feature branches, using Notion for project planning and GitHub for version control.
+`,
+},
     {
       title: "Wake Tricks",
       description: "Cable park wakeboard tricks lexicon app for iOS",
